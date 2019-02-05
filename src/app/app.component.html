@@ -36,10 +36,18 @@
             *ngIf="todo.status; then finished; else unfinished"
           ></ng-container>
           <ng-template #finished>
-            <span class="badge badge-success badge-pill">Finished</span>
+            <span
+              class="badge badge-success badge-pill"
+              (click)="handleToggleFinished(todo)"
+              >Finished</span
+            >
           </ng-template>
           <ng-template #unfinished>
-            <span class="badge badge-danger badge-pill">Unfinised</span>
+            <span
+              class="badge badge-danger badge-pill"
+              (click)="handleToggleFinished(todo)"
+              >Unfinised</span
+            >
           </ng-template>
         </li>
       </ul>

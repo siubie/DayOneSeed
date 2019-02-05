@@ -15,4 +15,8 @@ export class AppComponent {
     this.todoList.push(itemTodo);
     return false;
   }
+
+  handleToggleFinished(todo: Todo) {
+    return (todo.status = !todo.status);
+  }
 }
