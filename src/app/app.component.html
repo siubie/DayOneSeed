@@ -1,15 +1,22 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12 order-md-2 mb-4">
-      <form class="card p-2 todo-input">
+      <form class="card p-2 todo-input" target="#">
         <div class="input-group">
           <input
             type="text"
             class="form-control"
             placeholder="Add Your Todo List Here"
+            #task
           />
           <div class="input-group-append">
-            <button type="submit" class="btn btn-secondary">Add Todo</button>
+            <button
+              type="submit"
+              class="btn btn-secondary"
+              (click)="handleAddTodo(task.value)"
+            >
+              Add Todo
+            </button>
           </div>
         </div>
       </form>
