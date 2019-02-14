@@ -17,6 +17,7 @@ export class AppComponent {
   }
 
   handleToggleFinished(todo: Todo) {
+    console.log(this.todoList);
     return (todo.status = !todo.status);
   }
 }
