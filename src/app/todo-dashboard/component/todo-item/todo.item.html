@@ -1,0 +1,18 @@
+<div class="list-group-item d-flex justify-content-between lh-condensed">
+  <div>
+    <h6 class="my-0">{{ item.task }}</h6>
+  </div>
+  <ng-container
+    *ngIf="item.status; then finished; else unfinished"
+  ></ng-container>
+  <ng-template #finished>
+    <span class="badge badge-success badge-pill" (click)="onStatusClick(item)"
+      >Finished</span
+    >
+  </ng-template>
+  <ng-template #unfinished>
+    <span class="badge badge-danger badge-pill" (click)="onStatusClick(item)"
+      >Unfinised</span
+    >
+  </ng-template>
+</div>
