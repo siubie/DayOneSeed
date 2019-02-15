@@ -2,11 +2,40 @@
   <div class="col-md-12 order-md-2 mb-4">
     <add-todo (create)="handleAddTodo($event)"></add-todo>
     <todo-count [todos]="todoList"></todo-count>
-    <todo-item
-      *ngFor="let todo of todoList"
-      [item]="todo"
-      (status)="handleToggleFinished($event)"
-    ></todo-item>
-    <!-- <ul class="list-group mb-3"></ul> -->
+
+    <ul class="list-group mb-3">
+      <todo-item
+        *ngFor="let todo of todoList"
+        [item]="todo"
+        (status)="handleToggleFinished($event)"
+      ></todo-item>
+    </ul>
+    <!-- <ul class="list-group mb-3">
+      <li
+        class="list-group-item d-flex justify-content-between lh-condensed"
+        *ngFor="let todo of todoList"
+      >
+        <div>
+          <h6 class="my-0">{{ todo.task }}</h6>
+        </div>
+        <ng-container
+          *ngIf="todo.status; then finished; else unfinished"
+        ></ng-container>
+        <ng-template #finished>
+          <span
+            class="badge badge-success badge-pill"
+            (click)="handleToggleFinished(todo)"
+            >Finished</span
+          >
+        </ng-template>
+        <ng-template #unfinished>
+          <span
+            class="badge badge-danger badge-pill"
+            (click)="handleToggleFinished(todo)"
+            >Unfinised</span
+          >
+        </ng-template>
+      </li>
+    </ul> -->
   </div>
 </div>
