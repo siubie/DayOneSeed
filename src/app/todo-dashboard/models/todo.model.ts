@@ -1,10 +1,9 @@
 export class Todo {
-  id: string;
+  _id: string;
   task: string;
   status: boolean;
 
-  constructor(id, task, status) {
-    this.id = id;
+  constructor(task, status) {
     this.task = task;
     this.status = status;
   }

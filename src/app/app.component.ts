@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Todo } from './todo.model';
+import { Todo } from './todo-dashboard/models/todo.model';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +11,7 @@ export class AppComponent {
   todoList: Todo[] = [];
 
   handleAddTodo(task: string) {
-    const itemTodo = new Todo('1', task, false);
+    const itemTodo = new Todo(task, false);
     this.todoList.push(itemTodo);
     return false;
   }
